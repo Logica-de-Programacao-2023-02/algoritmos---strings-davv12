@@ -1,0 +1,24 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func substituirVogais(str string) string {
+	vogais := "aeiouAEIOU"
+	for _, vogal := range vogais {
+		str = strings.ReplaceAll(str, string(vogal), "*")
+	}
+	return str
+}
+
+func main() {
+	var entradaUsuario string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&entradaUsuario)
+
+	resultado := substituirVogais(entradaUsuario)
+	fmt.Println("Resultado:", resultado)
+}
+
