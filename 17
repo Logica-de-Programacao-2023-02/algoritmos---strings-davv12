@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+)
+
+func letrasUnicas(str string) string {
+	ocorrencias := make(map[rune]int)
+
+	for _, char := range str {
+		ocorrencias[char]++
+	}
+
+	var resultado string
+	for _, char := range str {
+		if ocorrencias[char] == 1 {
+			resultado += string(char)
+		}
+	}
+
+	return resultado
+}
+
+func main() {
+	var entradaUsuario string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&entradaUsuario)
+
+	resultado := letrasUnicas(entradaUsuario)
+	fmt.Println("Letras únicas na string:", resultado)
+}
