@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func substituirLetra(str, letraAlvo, letraSubstituta string) string {
+	return strings.ReplaceAll(str, letraAlvo, letraSubstituta)
+}
+
+func main() {
+	var entradaUsuario, letraAlvo, letraSubstituta string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&entradaUsuario)
+	fmt.Print("Digite a letra a ser substituída: ")
+	fmt.Scanln(&letraAlvo)
+	fmt.Print("Digite a letra de substituição: ")
+	fmt.Scanln(&letraSubstituta)
+
+	resultado := substituirLetra(entradaUsuario, letraAlvo, letraSubstituta)
+	fmt.Println("Resultado:", resultado)
+}
