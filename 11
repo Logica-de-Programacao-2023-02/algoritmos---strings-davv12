@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func removerVogais(str string) string {
+	vogais := "aeiouAEIOU"
+	semVogais := strings.Map(func(r rune) rune {
+		if strings.ContainsRune(vogais, r) {
+			return -1 // Remover a vogal
+		}
+		return r
+	}, str)
+	return semVogais
+}
+
+func main() {
+	var entradaUsuario string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&entradaUsuario)
+
+	resultado := removerVogais(entradaUsuario)
+	fmt.Println("Resultado:", resultado)
+}
